@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+body {
+  background-color: #111;
+}
+
+.color-row {
+  height: 50px;
+  font: bold;
+
+  padding-inline: 1em;
+}
+.color-wrapper {
+  height: 100%;
+}
+
+.color-picker {
+  background-color: transparent;
+  border: 0px;
+  outline: 0px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  border-radius: 50%;
+}
+.color-picker-ctn {
+  position: relative;
+}
+
+.color-input {
+  border-radius: 7px;
+  padding-inline: 10px;
+  border: 0;
+  font-size: 18px;
+  padding-block: 10px;
+}
+
+footer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 1em;
+  flex-direction: column;
+  gap: 20px;
+}
