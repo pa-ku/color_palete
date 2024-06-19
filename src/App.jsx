@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
   const [colorName, setColorName] = useState('primary')
-
+  const [range, setRange] = useState(7)
   function hexToHSL(hex) {
     let r = parseInt(hex.slice(1, 3), 16) / 255
     let g = parseInt(hex.slice(3, 5), 16) / 255
@@ -91,7 +91,7 @@ function ColorGradient() {
     const colors = {}
 
     for (let i = 1; i <= 10; i++) {
-      const step = (5 - i) * 8 // Ajustamos la luminosidad
+      const step = (5 - i) * range // Ajustamos la luminosidad
       const newL = Math.max(0, Math.min(100, baseHSL[2] + step))
       colors[`${colorName}-${i}00`] = hslToHex(baseHSL[0], baseHSL[1], newL)
     }
@@ -103,7 +103,7 @@ function ColorGradient() {
 
   useEffect(() => {
     setGradientColors(generateGradientColors(baseColor))
-  }, [baseColor, colorName])
+  }, [baseColor, colorName, range])
 
   return (
     <>
@@ -119,7 +119,7 @@ function ColorGradient() {
         <div className='color-picker-ctn'>
           <input
             type='text'
-            style={{backgroundColor: baseColor }}
+            style={{ backgroundColor: baseColor }}
             className='color-input'
             value={baseColor}
             onChange={(e) => setBaseColor(`${e.target.value}`)}
@@ -131,6 +131,18 @@ function ColorGradient() {
             value={baseColor}
           />
         </div>
+        <div className='range-ctn'>
+          <p>Range {range}</p>
+          <input
+            className='range'
+            type='range'
+            min={3}
+            max={10}
+            value={range}
+            onChange={(e) => setRange(e.target.value)}
+          />
+        </div>
+
         <input
           className='color-input'
           type='text'

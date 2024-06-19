@@ -9,8 +9,9 @@ body {
 }
 
 .color-row {
-  height: 40px;
+  height: 60px;
   font: bold;
+  color: white;
 
   padding-inline: 1em;
 }
@@ -18,11 +19,31 @@ body {
   height: 100%;
 }
 
+/* SELECTION */
+::selection {
+  color: white;
+  background: #2595be80;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  background-color: #333;
+  width: 17px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border: 3.2px solid #333;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
 .color-picker {
   background-color: transparent;
   border: 0px;
   outline: 0px;
-  width: 20px;
+  width: 0px;
+  padding-inline: 1em;
   position: absolute;
   top: 0;
   right: 10px;
@@ -62,4 +83,24 @@ footer {
   padding-top: 1em;
   flex-direction: column;
   gap: 20px;
+}
+
+.range {
+  border: 0px;
+  outline: 0px;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #d4d4d4;
+  background-image: linear-gradient(to right, #e6e6e6, #4f4f4f);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.range-ctn {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  gap: 10px;
 }
