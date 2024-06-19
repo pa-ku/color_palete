@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
-  const [colorName, setColorName] = useState('primary')
+  const [colorName, setColorName] = useState('--primary')
   const [range, setRange] = useState(7)
   function hexToHSL(hex) {
     let r = parseInt(hex.slice(1, 3), 16) / 255
@@ -110,7 +110,7 @@ function ColorGradient() {
       <main className='color-wrapper'>
         {Object.entries(gradientColors).map(([key, value]) => (
           <p className='color-row' key={key} style={{ backgroundColor: value }}>
-            {key}: {value}
+            {key}: {value};
           </p>
         ))}
       </main>

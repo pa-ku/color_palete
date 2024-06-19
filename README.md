@@ -4,4 +4,8 @@ Una pequeña app que te permite crear un gradiente con un color elegido, especia
 
 Web: https://clrpalet.netlify.app/
 
-<img src="/public/readmeimage.png">
+<img src="/public/main.png">
+
+## usage
+
+<img src="/public/secondary.png">
