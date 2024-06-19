@@ -6,11 +6,10 @@
   margin: 0;
 }
 body {
-  background-color: #111;
 }
 
 .color-row {
-  height: 50px;
+  height: 40px;
   font: bold;
 
   padding-inline: 1em;
@@ -23,14 +22,22 @@ body {
   background-color: transparent;
   border: 0px;
   outline: 0px;
-  height: 40px;
+  width: 20px;
   position: absolute;
   top: 0;
-  right: 0px;
+  right: 10px;
   top: 0px;
   bottom: 0px;
   margin: auto;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+.color-picker::before {
+  content: '🎨';
+  position: absolute;
+  font-size: 20px;
 }
 .color-picker-ctn {
   position: relative;
@@ -39,7 +46,9 @@ body {
 .color-input {
   border-radius: 7px;
   padding-inline: 10px;
-  border: 0;
+  outline: none;
+  border: none;
+  background-color: #d4d4d4;
   font-size: 18px;
   padding-block: 10px;
 }

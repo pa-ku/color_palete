@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
-  const [colorName, setColorName] = useState('blue')
+  const [colorName, setColorName] = useState('primary')
 
   function hexToHSL(hex) {
     let r = parseInt(hex.slice(1, 3), 16) / 255
@@ -115,10 +115,11 @@ function ColorGradient() {
         ))}
       </main>
 
-      <footer>
+      <footer style={{ backgroundColor: gradientColors.primary - 1000 }}>
         <div className='color-picker-ctn'>
           <input
             type='text'
+            style={{backgroundColor: baseColor }}
             className='color-input'
             value={baseColor}
             onChange={(e) => setBaseColor(`${e.target.value}`)}
